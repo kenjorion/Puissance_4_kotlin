@@ -1,7 +1,9 @@
 package module
 
 
-interface GameInterface {
+interface
+
+GameInterface {
 
   fun displayWelcomeMessage()
 

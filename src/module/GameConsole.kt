@@ -76,6 +76,36 @@ class GameConsole : GameInterface {
       println()
       println()
     }
+      var j = 0
+      while (true) {
+          println("Veuillez rentrer une colonne (entre 0 et 8) ")
+
+          val reader = Scanner(System.`in`)
+          val input:Int = reader.nextInt()
+
+          var i = 0;
+          while (tableau[8 - i][input] != " |_| ") {
+              i++;
+          }
+
+          if ((j % 2) == 0) {
+              tableau[8 - i][input] = "  X  "
+          } else {
+              tableau[8 - i][input] = "  O  "
+          }
+          j++
+
+          for (array in tableau) {
+              // print(line )
+              // line = line +1
+              for (value in array) {
+                  print(" $value")
+              }
+              println()
+              println()
+          }
+          
+      }
 
   }
 
