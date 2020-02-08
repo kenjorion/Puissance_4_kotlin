@@ -1,6 +1,7 @@
 package module
 
 import java.util.*
+import kotlin.system.exitProcess
 
 
 class GameConsole : GameInterface {
@@ -90,8 +91,16 @@ class GameConsole : GameInterface {
 
           if ((j % 2) == 0) {
               tableau[8 - i][input] = "  X  "
+              if (presenter.isWinner(tableau, "  X  ", 8 - i, input)) {
+                  print("${presenter.getPseudo('X')} is the Winner !!")
+                  exitProcess(1)
+              }
           } else {
               tableau[8 - i][input] = "  O  "
+              if (presenter.isWinner(tableau, "  O  ", 8 - i, input)) {
+                  print("${presenter.getPseudo('O')} is the Winner !!")
+                  exitProcess(1)
+              }
           }
           j++
 
